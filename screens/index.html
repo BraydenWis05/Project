@@ -3,114 +3,107 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Side Quest Screens</title>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Gabarito:wght@400;600;700&family=Space+Mono&display=swap" rel="stylesheet" />
+<title>Side Quest Field Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet" />
 <style>
-:root{--orange:#F45B35;--paper:#F4EBD8;--lime:#C8E65A;--blue:#4444DB;--ink:#252525}
+:root{--paper:#E9E0CC;--moss:#53664D;--brick:#914D3D;--ink:#49382E;--sand:#B8A98D}
 *{box-sizing:border-box;margin:0}
-body{background:#E6DCC6;color:var(--ink);font:16px/1.4 Gabarito,sans-serif;padding:56px 16px}
-h1,h2,.d{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;line-height:1;letter-spacing:-.03em;text-wrap:balance}
+body{background:#DCD1BA;color:var(--ink);font:15px/1.45 "Courier Prime",monospace;padding:56px 16px}
+.serif{font-family:"Instrument Serif",serif;font-weight:400;line-height:1;letter-spacing:-.01em}
+.cap{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
 .row{display:flex;flex-wrap:wrap;gap:40px 28px;justify-content:center;align-items:flex-start}
 figure{width:300px;display:flex;flex-direction:column;gap:14px}
-figcaption{color:var(--ink);font-size:14px;line-height:1.45}
-figcaption b{display:block;font-size:16px;margin-bottom:2px}
+figcaption{font-size:13px;line-height:1.5}
+figcaption b{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:20px;line-height:1.1;margin-bottom:4px}
 .phone{height:620px;border-radius:40px;background:var(--paper);overflow:hidden;position:relative;
-  display:flex;flex-direction:column;padding:56px 20px 24px;gap:14px;border:3px solid var(--ink)}
-.quiet{color:#6d665a;font-size:14px}
-.btn{border-radius:999px;padding:15px;text-align:center;font-weight:700;font-size:17px}
-.go{background:var(--orange);color:#fff}
-.alt{box-shadow:inset 0 0 0 2px var(--ink)}
-
-.ticket{display:flex;border-radius:14px;overflow:hidden;filter:drop-shadow(0 3px 0 var(--ink))}
-.ticket .body{flex:1;background:#fff;padding:16px;display:flex;flex-direction:column;gap:8px}
-.ticket .stub{width:42px;background:var(--ink);color:var(--paper);display:grid;place-items:center;border-left:3px dotted var(--paper)}
-.ticket .stub span{writing-mode:vertical-rl;rotate:180deg;font:12px "Space Mono",monospace}
-
-.list{display:flex;flex-direction:column}
-.list div{padding:13px 2px;border-bottom:1.5px solid #dccfb6;display:flex;justify-content:space-between;gap:10px}
-.list small{color:#6d665a;white-space:nowrap}
-.field{border-bottom:2.5px solid var(--ink);padding:8px 0;font-size:22px;font-weight:600}
-.pill{display:inline-block;padding:7px 12px;border-radius:999px;box-shadow:inset 0 0 0 1.5px #b9ae99;font-size:14px;margin:0 4px 6px 0}
-.pill.on{background:var(--ink);color:var(--paper);box-shadow:none}
-.face{width:30px;height:30px;border-radius:50%;display:inline-grid;place-items:center;color:#fff;font-weight:700;font-size:13px;margin-right:-6px;border:2px solid var(--paper)}
-.stamp{width:78px;height:78px;border-radius:50%;border:3px solid var(--orange);color:var(--orange);display:grid;place-items:center;text-align:center;
-  font:800 12px/1 "Bricolage Grotesque";letter-spacing:-.01em;position:relative;padding:8px}
-.stamp::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1.5px solid var(--orange)}
-.stamp.b{}
-.stamp.empty{border:2px dashed #b9ae99;color:#b9ae99}.stamp.empty::after{display:none}
+  display:flex;flex-direction:column;padding:54px 22px 24px;gap:14px;border:2px solid var(--ink)}
+.phone::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.18;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.mast{display:flex;justify-content:space-between;border-bottom:1.5px solid var(--ink);padding-bottom:8px}
+.btn{padding:14px;text-align:center;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid var(--ink)}
+.go{background:var(--moss);color:var(--paper);border-color:var(--moss)}
+.ticket{background:#F3ECDC;border:1.5px solid var(--ink);padding:16px;position:relative}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:16px;height:16px;border-radius:50%;background:var(--paper);border:1.5px solid var(--ink);translate:0 -50%}
+.ticket::before{left:-9px;clip-path:inset(0 0 0 50%)}
+.ticket::after{right:-9px;clip-path:inset(0 50% 0 0)}
+.entry{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px dashed var(--sand)}
+.entry .serif{font-size:20px}
+.entry small{color:var(--moss);white-space:nowrap;font-size:11px;letter-spacing:.08em;text-transform:uppercase;padding-top:4px}
+.field{border-bottom:1.5px solid var(--ink);padding:6px 0;font-size:30px}
+.opt{display:inline-block;padding:6px 10px;border:1px solid var(--sand);font-size:12px;margin:0 4px 6px 0}
+.opt.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.photo{background:#9d917a;position:relative;overflow:hidden;filter:sepia(.35) contrast(1.05)}
+.photo::after{content:"";position:absolute;inset:0;opacity:.5;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='1.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.stamp{width:80px;height:80px;border-radius:50%;border:2px solid var(--brick);color:var(--brick);display:grid;place-items:center;text-align:center;
+  font-size:9px;letter-spacing:.1em;text-transform:uppercase;line-height:1.2;position:relative;padding:8px;opacity:.85}
+.stamp::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px solid var(--brick)}
+.stamp.empty{border:1.5px dashed var(--sand);color:#8a7d66}.stamp.empty::after{display:none}
 </style>
 </head>
 <body>
 <div class="row">
 
 <figure><div class="phone">
-  <h2 style="font-size:36px">Free tonight?</h2>
-  <p class="quiet">You've got a couple hours. This one's been waiting.</p>
-  <div class="ticket" style="rotate:-1.5deg">
-    <div class="body">
-      <h2 style="font-size:24px">Try the dumpling place on 5th</h2>
-      <p style="font-size:14px">Maya wants in.</p>
-    </div>
-    <div class="stub"><span>No. 012</span></div>
+  <div class="mast cap"><span>Field Notes</span><span>Vol. 01 / 2026</span></div>
+  <p class="serif" style="font-size:38px">Free this evening?</p>
+  <div class="ticket" style="rotate:-1deg">
+    <p class="cap" style="color:var(--brick)">Expedition No. 012</p>
+    <p class="serif" style="font-size:30px;margin:6px 0 8px">The dumpling place on 5th.</p>
+    <p class="cap" style="color:var(--moss)">Evening / 2 hrs / with Maya</p>
   </div>
-  <div class="btn go">Do it tonight</div>
-  <p style="font-weight:700;margin-top:6px">Your list</p>
-  <div class="list">
-    <div>Watch the sunset from the roof <small>30 min</small></div>
-    <div>Finally go to the thrift market <small>Sat</small></div>
-    <div>Learn one song on guitar <small>1 hr</small></div>
-  </div>
-</div><figcaption><b>Your list, with one picked for right now</b>The app picks a quest that fits the time you have and who's around, so the list doesn't just sit there.</figcaption></figure>
-
-<figure><div class="phone">
-  <h2 style="font-size:36px">What do you want to do?</h2>
-  <div class="field">Go to a pottery class<span style="opacity:.35">|</span></div>
+  <div class="btn go">Begin expedition</div>
+  <p class="cap" style="margin-top:6px">Still on the list</p>
   <div>
-    <p class="quiet" style="margin-bottom:8px">How long?</p>
-    <span class="pill">Under an hour</span><span class="pill on">An afternoon</span><span class="pill">A whole day</span>
+    <div class="entry"><span class="serif">Sunset from the roof</span><small>30 min</small></div>
+    <div class="entry"><span class="serif">The thrift market</span><small>Sat</small></div>
+    <div class="entry" style="border:0"><span class="serif">One song on guitar</span><small>1 hr</small></div>
+  </div>
+</div><figcaption><b>The list, with tonight's pick</b>The app takes one thing off your list that fits your free time, and it's issued as an expedition ticket.</figcaption></figure>
+
+<figure><div class="phone">
+  <div class="mast cap"><span>New entry</span><span>No. 013</span></div>
+  <p class="serif" style="font-size:38px">What have you been meaning to do?</p>
+  <div class="field serif">A pottery class<span style="opacity:.3">|</span></div>
+  <div>
+    <p class="cap" style="margin-bottom:8px">Time needed</p>
+    <span class="opt">An hour</span><span class="opt on">An afternoon</span><span class="opt">A day</span>
   </div>
   <div>
-    <p class="quiet" style="margin-bottom:8px">With who?</p>
-    <span class="pill">Just me</span><span class="pill on">Jules</span><span class="pill">Anyone</span>
+    <p class="cap" style="margin-bottom:8px">Fellow explorers</p>
+    <span class="opt">Solo</span><span class="opt on">Jules</span><span class="opt">Anyone</span>
   </div>
-  <p class="quiet" style="margin-top:4px">Stuck? Try a museum you've never been to, a new running route, or cooking something from your grandma.</p>
-  <div class="btn go" style="margin-top:auto">Add to my list</div>
-</div><figcaption><b>Adding a quest takes five seconds</b>Write it how you'd say it, then pick a rough time and who's coming. The time and people are what let the app suggest the right quest later.</figcaption></figure>
+  <div class="btn go" style="margin-top:auto">Add to the list</div>
+</div><figcaption><b>Writing it down is the first step</b>Write one line, then pick how long it takes and who's coming. That's all the app needs to suggest it at the right moment.</figcaption></figure>
 
 <figure><div class="phone">
-  <div class="ticket">
-    <div class="body">
-      <h2 style="font-size:28px">Try the dumpling place on 5th</h2>
-      <p style="font-size:14px">Tonight, 7pm</p>
-    </div>
-    <div class="stub"><span>No. 012</span></div>
+  <div class="mast cap"><span>Expedition No. 012</span><span>In progress</span></div>
+  <p class="serif" style="font-size:38px">The dumpling place on 5th.</p>
+  <p class="cap" style="color:var(--moss)">Tonight / 7:00 PM</p>
+  <div class="photo" style="height:190px"></div>
+  <p class="serif" style="font-size:18px;font-style:italic">"Pork and chive. Maya ordered a second round."</p>
+  <p class="cap" style="opacity:.7">Fellow explorers: Maya. Jules hasn't replied.</p>
+  <div style="margin-top:auto;display:flex;flex-direction:column;gap:8px">
+    <div class="btn go">Log observation</div>
+    <div class="btn">Another day</div>
   </div>
-  <div style="display:flex;align-items:center;gap:14px">
-    <div><span class="face" style="background:var(--orange)">S</span><span class="face" style="background:var(--ink)">M</span></div>
-    <p style="font-size:15px">You and Maya are going</p>
-  </div>
-  <p class="quiet">Jules hasn't answered yet.</p>
-  <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
-    <div class="btn go">I did it</div>
-    <div class="btn alt">Move to another day</div>
-  </div>
-</div><figcaption><b>Commit to it, bring someone</b>Saying "I'm going" and inviting a friend is what turns "someday" into tonight. Moving it to another day is fine. There's no guilt.</figcaption></figure>
+</div><figcaption><b>Log it while you're there</b>Take a quick photo and write one line about it. It's a journal entry, not a post.</figcaption></figure>
 
 <figure><div class="phone">
-  <h2 style="font-size:36px">Done. Stamped.</h2>
-  <p class="quiet">You've done 9 things you said you'd do.</p>
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;justify-items:center;margin-top:6px">
-    <div class="stamp" style="rotate:-12deg">Dumplings</div>
-    <div class="stamp b" style="rotate:8deg">Roof sunset</div>
-    <div class="stamp" style="rotate:-4deg">First 5k</div>
-    <div class="stamp b" style="rotate:14deg">Night swim</div>
-    <div class="stamp" style="rotate:-9deg">Thrift haul</div>
-    <div class="stamp b" style="rotate:5deg">Pottery</div>
-    <div class="stamp empty">Guitar song</div>
+  <div class="mast cap"><span>Field journal</span><span>9 documented</span></div>
+  <p class="serif" style="font-size:38px">Documented.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px 8px;justify-items:center;margin-top:4px">
+    <div class="stamp" style="rotate:-12deg">No. 012<br>Dumplings</div>
+    <div class="stamp" style="rotate:7deg">No. 009<br>Roof sunset</div>
+    <div class="stamp" style="rotate:-4deg">No. 008<br>First 5K</div>
+    <div class="stamp" style="rotate:13deg">No. 006<br>Night swim</div>
+    <div class="stamp" style="rotate:-8deg">No. 004<br>Thrift haul</div>
+    <div class="stamp" style="rotate:4deg">No. 002<br>Pottery</div>
+    <div class="stamp empty">Guitar</div>
     <div class="stamp empty">Museum</div>
   </div>
-  <div class="btn alt" style="margin-top:auto">Add a photo</div>
-</div><figcaption><b>A collection of things you actually did</b>Every quest you finish becomes a stamp. Empty ones show what's still on your list.</figcaption></figure>
+  <p class="cap" style="text-align:center;margin-top:auto">Keep your eyes open.</p>
+</div><figcaption><b>The field journal</b>Every finished expedition gets a numbered stamp. Over time it becomes a record of things you actually did.</figcaption></figure>
 
 </div>
 </body>
