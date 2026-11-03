@@ -8,11 +8,11 @@
 <style>
 :root{--orange:#F45B35;--paper:#F4EBD8;--lime:#C8E65A;--blue:#4444DB;--ink:#252525}
 *{box-sizing:border-box;margin:0}
-body{background:var(--blue);color:var(--ink);font:16px/1.4 Gabarito,sans-serif;padding:56px 16px}
+body{background:#E6DCC6;color:var(--ink);font:16px/1.4 Gabarito,sans-serif;padding:56px 16px}
 h1,h2,.d{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;line-height:1;letter-spacing:-.03em;text-wrap:balance}
 .row{display:flex;flex-wrap:wrap;gap:40px 28px;justify-content:center;align-items:flex-start}
 figure{width:300px;display:flex;flex-direction:column;gap:14px}
-figcaption{color:var(--paper);font-size:14px;line-height:1.45}
+figcaption{color:var(--ink);font-size:14px;line-height:1.45}
 figcaption b{display:block;font-size:16px;margin-bottom:2px}
 .phone{height:620px;border-radius:40px;background:var(--paper);overflow:hidden;position:relative;
   display:flex;flex-direction:column;padding:56px 20px 24px;gap:14px;border:3px solid var(--ink)}
@@ -22,8 +22,8 @@ figcaption b{display:block;font-size:16px;margin-bottom:2px}
 .alt{box-shadow:inset 0 0 0 2px var(--ink)}
 
 .ticket{display:flex;border-radius:14px;overflow:hidden;filter:drop-shadow(0 3px 0 var(--ink))}
-.ticket .body{flex:1;background:var(--lime);padding:16px;display:flex;flex-direction:column;gap:8px}
-.ticket .stub{width:42px;background:var(--blue);color:var(--paper);display:grid;place-items:center;border-left:3px dotted var(--paper)}
+.ticket .body{flex:1;background:#fff;padding:16px;display:flex;flex-direction:column;gap:8px}
+.ticket .stub{width:42px;background:var(--ink);color:var(--paper);display:grid;place-items:center;border-left:3px dotted var(--paper)}
 .ticket .stub span{writing-mode:vertical-rl;rotate:180deg;font:12px "Space Mono",monospace}
 
 .list{display:flex;flex-direction:column}
@@ -36,7 +36,7 @@ figcaption b{display:block;font-size:16px;margin-bottom:2px}
 .stamp{width:78px;height:78px;border-radius:50%;border:3px solid var(--orange);color:var(--orange);display:grid;place-items:center;text-align:center;
   font:800 12px/1 "Bricolage Grotesque";letter-spacing:-.01em;position:relative;padding:8px}
 .stamp::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1.5px solid var(--orange)}
-.stamp.b{border-color:var(--blue);color:var(--blue)}.stamp.b::after{border-color:var(--blue)}
+.stamp.b{}
 .stamp.empty{border:2px dashed #b9ae99;color:#b9ae99}.stamp.empty::after{display:none}
 </style>
 </head>
@@ -86,7 +86,7 @@ figcaption b{display:block;font-size:16px;margin-bottom:2px}
     <div class="stub"><span>No. 012</span></div>
   </div>
   <div style="display:flex;align-items:center;gap:14px">
-    <div><span class="face" style="background:var(--orange)">S</span><span class="face" style="background:var(--blue)">M</span></div>
+    <div><span class="face" style="background:var(--orange)">S</span><span class="face" style="background:var(--ink)">M</span></div>
     <p style="font-size:15px">You and Maya are going</p>
   </div>
   <p class="quiet">Jules hasn't answered yet.</p>
@@ -100,7 +100,7 @@ figcaption b{display:block;font-size:16px;margin-bottom:2px}
   <h2 style="font-size:36px">Done. Stamped.</h2>
   <p class="quiet">You've done 9 things you said you'd do.</p>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;justify-items:center;margin-top:6px">
-    <div class="stamp" style="rotate:-12deg;background:#fbe3d9">Dumplings</div>
+    <div class="stamp" style="rotate:-12deg">Dumplings</div>
     <div class="stamp b" style="rotate:8deg">Roof sunset</div>
     <div class="stamp" style="rotate:-4deg">First 5k</div>
     <div class="stamp b" style="rotate:14deg">Night swim</div>
