@@ -71,9 +71,27 @@ figcaption b{display:block;font-family:"Instrument Serif",serif;font-weight:400;
 .snap .hand{position:absolute;bottom:3px;left:10px;font-size:20px}
 .photo{background:radial-gradient(circle at 50% 60%,#e7d3a6 0 18%,#c79f63 19% 24%,transparent 25%),radial-gradient(circle at 30% 70%,#e9d7ae 0 13%,#bf9358 14% 18%,transparent 19%),radial-gradient(circle at 70% 72%,#ead8ae 0 12%,#c39760 13% 17%,transparent 18%),linear-gradient(#3f3127,#2a211b) !important}
 .stampsvg{width:84px;height:84px;color:var(--brick);opacity:.88}
+
+/* paper + ink pass */
+.phone{background:#ECE3CF !important;box-shadow:0 30px 50px -30px rgba(73,56,46,.6)}
+.phone::after{opacity:.32 !important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='4'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E"),radial-gradient(ellipse at 50% 40%,transparent 55%,rgba(120,95,60,.25)) !important;mix-blend-mode:multiply}
+.scr,.serif,.cap,.entry,.hand{text-shadow:0 0 .4px currentColor}
+.rough{filter:url(#rough)}
+.btn.go{background:var(--moss) !important;filter:url(#rough);letter-spacing:.2em}
+.btn{filter:url(#rough)}
+.ticket{filter:url(#rough) drop-shadow(0 2px 2px rgba(73,56,46,.25))}
+.stampsvg{filter:url(#rough)}
+.mast{border-bottom:none;background:linear-gradient(var(--ink),var(--ink)) bottom/100% 1.5px no-repeat;filter:url(#rough)}
+.tabs{background:transparent !important;border-top:none !important;display:flex !important;gap:4px;padding:0 14px 26px !important;align-items:flex-end}
+.tabs span{flex:1;background:#E2D6BC;border:1px solid var(--sand);border-bottom:none;border-radius:8px 8px 0 0;padding:9px 0 8px;opacity:1 !important;color:var(--ink) !important;filter:url(#rough);font-size:10px}
+.tabs span.on{background:#F4ECDA;padding-top:13px;color:var(--brick) !important}
+.tabs svg{display:none}
+.card{background:#FAF5E8 repeating-linear-gradient(transparent 0 27px,rgba(68,100,180,.25) 27px 28px);background-position:0 6px;border-top:2px solid rgba(145,77,61,.55);padding:10px 16px 12px;box-shadow:0 1px 1px rgba(0,0,0,.08),0 6px 14px -8px rgba(73,56,46,.45);rotate:-.8deg}
+.card .rule-red{position:absolute}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute"><filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3"/><feDisplacementMap in="SourceGraphic" scale="1.6"/></filter></svg>
 <div class="row">
 
 <figure><div class="phone"><div class="sb"><span>9:41</span><i><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></i></div><div class="scr">
@@ -94,9 +112,9 @@ figcaption b{display:block;font-family:"Instrument Serif",serif;font-weight:400;
 </div><div class="tabs"><span class="on"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg>Today</span><span class=""><svg viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3z"/><path d="M5 17a3 3 0 0 1 3-3h11"/></svg>Journal</span><span class=""><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Add</span><span class=""><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 19c0-3 3-5 6-5s6 2 6 5M15 15c3 0 6 1 6 4"/></svg>Explorers</span><div class="hi"></div></div></div><figcaption><b>The list, with tonight's pick</b>The app takes one thing off your list that fits your free time, and it's issued as an expedition ticket.</figcaption></figure>
 
 <figure><div class="phone"><div class="sb"><span>9:41</span><i><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></i></div><div class="scr grid">
-  <div class="nav"><span>Cancel</span><span class="cap">Entry No. 013</span><span style="color:var(--moss);font-weight:700">Add</span></div>
+  <div class="mast cap"><span>New entry</span><span>Vol. 01</span></div>
   <p class="serif" style="font-size:38px">What have you been meaning to do?</p>
-  <div class="field serif">A pottery class<span style="opacity:.3">|</span></div>
+  <div class="card"><p class="cap" style="color:var(--brick);margin-bottom:6px">Entry No. 013</p><p class="hand" style="font-size:30px">A pottery class</p></div>
   <div>
     <p class="cap" style="margin-bottom:8px">Time needed</p>
     <span class="opt">An hour</span><span class="opt on">An afternoon</span><span class="opt">A day</span>
@@ -105,8 +123,9 @@ figcaption b{display:block;font-family:"Instrument Serif",serif;font-weight:400;
     <p class="cap" style="margin-bottom:8px">Fellow explorers</p>
     <span class="opt">Solo</span><span class="opt on">Jules</span><span class="opt">Anyone</span>
   </div>
+  <div class="btn go" style="margin-top:auto">File it</div>
   
-</div><div class="kb"><div><b>q</b><b>w</b><b>e</b><b>r</b><b>t</b><b>y</b><b>u</b><b>i</b><b>o</b><b>p</b></div><div><b>a</b><b>s</b><b>d</b><b>f</b><b>g</b><b>h</b><b>j</b><b>k</b><b>l</b></div><div><b>z</b><b>x</b><b>c</b><b>v</b><b>b</b><b>n</b><b>m</b></div><div><b style="flex:0 0 40px;font-size:13px">123</b><b class="w" style="font-size:14px">space</b><b style="flex:0 0 70px;font-size:13px;background:var(--moss);color:var(--paper)">return</b></div><div class="hi"></div></div></div><figcaption><b>Writing it down is the first step</b>Write one line, then pick how long it takes and who's coming. That's all the app needs to suggest it at the right moment.</figcaption></figure>
+</div><div class="tabs"><span>Today</span><span>Journal</span><span class="on">Add</span><span>Explorers</span><div class="hi"></div></div></div><figcaption><b>Writing it down is the first step</b>Write one line, then pick how long it takes and who's coming. That's all the app needs to suggest it at the right moment.</figcaption></figure>
 
 <figure><div class="phone"><div class="sb"><span>9:41</span><i><span class="sig"><b style="height:4px"></b><b style="height:6px"></b><b style="height:8px"></b><b style="height:10px"></b></span><span class="bat"></span></i></div><div class="scr">
   <div class="nav"><span class="back">&lsaquo;</span><span class="cap">Expedition No. 012</span><span>&middot;&middot;&middot;</span></div>
