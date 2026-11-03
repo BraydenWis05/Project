@@ -15,87 +15,102 @@ figure{width:300px;display:flex;flex-direction:column;gap:14px}
 figcaption{color:var(--paper);font-size:14px;line-height:1.45}
 figcaption b{display:block;font-size:16px;margin-bottom:2px}
 .phone{height:620px;border-radius:40px;background:var(--paper);overflow:hidden;position:relative;
-  display:flex;flex-direction:column;padding:56px 20px 24px;gap:16px;border:3px solid var(--ink)}
+  display:flex;flex-direction:column;padding:56px 20px 24px;gap:14px;border:3px solid var(--ink)}
 .quiet{color:#6d665a;font-size:14px}
-.btn{border-radius:999px;padding:16px;text-align:center;font-weight:700;font-size:17px}
+.btn{border-radius:999px;padding:15px;text-align:center;font-weight:700;font-size:17px}
 .go{background:var(--orange);color:#fff}
 .alt{box-shadow:inset 0 0 0 2px var(--ink)}
 
-/* the ticket: the one loud thing */
 .ticket{display:flex;border-radius:14px;overflow:hidden;filter:drop-shadow(0 3px 0 var(--ink))}
-.ticket .body{flex:1;background:var(--lime);padding:18px 16px 16px;display:flex;flex-direction:column;gap:10px}
-.ticket .stub{width:46px;background:var(--blue);color:var(--paper);display:grid;place-items:center;position:relative;
-  border-left:3px dotted var(--paper)}
+.ticket .body{flex:1;background:var(--lime);padding:16px;display:flex;flex-direction:column;gap:8px}
+.ticket .stub{width:42px;background:var(--blue);color:var(--paper);display:grid;place-items:center;border-left:3px dotted var(--paper)}
 .ticket .stub span{writing-mode:vertical-rl;rotate:180deg;font:12px "Space Mono",monospace}
-.ticket h2{font-size:44px}
-.stamp{position:absolute;width:118px;height:118px;border-radius:50%;border:4px solid var(--orange);color:var(--orange);
-  display:grid;place-items:center;text-align:center;font:900 26px/0.9 "Big Shoulders Display";rotate:-14deg;
-  background:rgba(244,235,216,.0);mix-blend-mode:multiply}
-.stamp::after{content:"";position:absolute;inset:5px;border-radius:50%;border:2px solid var(--orange)}
-.photo{border-radius:12px;background:#ddd2bd;position:relative;overflow:hidden}
-.photo::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 35% 40%,#c9bda5 0 14%,transparent 15%),radial-gradient(circle at 65% 40%,#c9bda5 0 14%,transparent 15%),radial-gradient(ellipse at 50% 72%,#c9bda5 0 22%,transparent 23%)}
-.who{font-size:13px;margin-top:6px}
-.who b{font-weight:700}
-.shutter{width:80px;height:80px;border-radius:50%;background:var(--orange);margin:0 auto;box-shadow:0 0 0 5px var(--paper),0 0 0 8px var(--ink)}
+
+.list{display:flex;flex-direction:column}
+.list div{padding:13px 2px;border-bottom:1.5px solid #dccfb6;display:flex;justify-content:space-between;gap:10px}
+.list small{color:#6d665a;white-space:nowrap}
+.field{border-bottom:2.5px solid var(--ink);padding:8px 0;font-size:22px;font-weight:600}
+.pill{display:inline-block;padding:7px 12px;border-radius:999px;box-shadow:inset 0 0 0 1.5px #b9ae99;font-size:14px;margin:0 4px 6px 0}
+.pill.on{background:var(--ink);color:var(--paper);box-shadow:none}
+.face{width:30px;height:30px;border-radius:50%;display:inline-grid;place-items:center;color:#fff;font-weight:700;font-size:13px;margin-right:-6px;border:2px solid var(--paper)}
+.stamp{width:78px;height:78px;border-radius:50%;border:3px solid var(--orange);color:var(--orange);display:grid;place-items:center;text-align:center;
+  font:900 15px/0.95 "Big Shoulders Display";position:relative;padding:8px}
+.stamp::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1.5px solid var(--orange)}
+.stamp.b{border-color:var(--blue);color:var(--blue)}.stamp.b::after{border-color:var(--blue)}
+.stamp.empty{border:2px dashed #b9ae99;color:#b9ae99}.stamp.empty::after{display:none}
 </style>
 </head>
 <body>
 <div class="row">
 
 <figure><div class="phone">
-  <p class="quiet">Hey Sam. Here's one for you.</p>
+  <h2 style="font-size:46px">Free tonight?</h2>
+  <p class="quiet">You've got a couple hours. This one's been waiting.</p>
+  <div class="ticket" style="rotate:-1.5deg">
+    <div class="body">
+      <h2 style="font-size:30px">Try the dumpling place on 5th</h2>
+      <p style="font-size:14px">Added 3 weeks ago. Maya wants in.</p>
+    </div>
+    <div class="stub"><span>No. 012</span></div>
+  </div>
+  <div class="btn go">Do it tonight</div>
+  <p style="font-weight:700;margin-top:6px">Your list</p>
+  <div class="list">
+    <div>Watch the sunset from the roof <small>30 min</small></div>
+    <div>Finally go to the thrift market <small>Sat</small></div>
+    <div>Learn one song on guitar <small>1 hr</small></div>
+  </div>
+</div><figcaption><b>Your list, with one picked for right now</b>The app picks a quest that fits the time you have and who's around, so the list doesn't just sit there.</figcaption></figure>
+
+<figure><div class="phone">
+  <h2 style="font-size:46px">What do you want to do?</h2>
+  <div class="field">Go to a pottery class<span style="opacity:.35">|</span></div>
+  <div>
+    <p class="quiet" style="margin-bottom:8px">How long?</p>
+    <span class="pill">Under an hour</span><span class="pill on">An afternoon</span><span class="pill">A whole day</span>
+  </div>
+  <div>
+    <p class="quiet" style="margin-bottom:8px">With who?</p>
+    <span class="pill">Just me</span><span class="pill on">Jules</span><span class="pill">Anyone</span>
+  </div>
+  <p class="quiet" style="margin-top:4px">Stuck? Try a museum you've never been to, a new running route, or cooking something from your grandma.</p>
+  <div class="btn go" style="margin-top:auto">Add to my list</div>
+</div><figcaption><b>Adding a quest takes five seconds</b>Write it how you'd say it, then pick a rough time and who's coming. The time and people are what let the app suggest the right quest later.</figcaption></figure>
+
+<figure><div class="phone">
   <div class="ticket">
     <div class="body">
-      <h2>Find something that looks like a face</h2>
-      <p>Takes about 2 minutes. Snap a photo.</p>
+      <h2 style="font-size:38px">Try the dumpling place on 5th</h2>
+      <p style="font-size:14px">Tonight, 7pm</p>
     </div>
-    <div class="stub"><span>No. 024</span></div>
+    <div class="stub"><span>No. 012</span></div>
   </div>
-  <p class="quiet" style="text-align:center">Not feeling it? Pull down for another.</p>
+  <div style="display:flex;align-items:center;gap:14px">
+    <div><span class="face" style="background:var(--orange)">S</span><span class="face" style="background:var(--blue)">M</span></div>
+    <p style="font-size:15px">You and Maya are going</p>
+  </div>
+  <p class="quiet">Jules hasn't answered yet.</p>
   <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
-    <div class="btn go">Start solo</div>
-    <div class="btn alt">Play with friends</div>
+    <div class="btn go">I did it</div>
+    <div class="btn alt">Move to another day</div>
   </div>
-</div><figcaption><b>Open the app, get a quest</b>There's no menu to pick from. The ticket is already dealt, so you're one tap away from doing something.</figcaption></figure>
+</div><figcaption><b>Commit to it, bring someone</b>Saying "I'm going" and inviting a friend is what turns "someday" into tonight. Moving it to another day is fine. There's no guilt.</figcaption></figure>
 
 <figure><div class="phone">
-  <div class="ticket" style="rotate:-2deg">
-    <div class="body">
-      <h2 style="font-size:36px">Find something that looks like a face</h2>
-      <p style="font-size:14px"><b>Bonus:</b> give it a name and a job.</p>
-    </div>
-    <div class="stub"><span>No. 024</span></div>
+  <h2 style="font-size:46px">Done. Stamped.</h2>
+  <p class="quiet">You've done 9 things you said you'd do.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;justify-items:center;margin-top:6px">
+    <div class="stamp" style="rotate:-12deg;background:#fbe3d9">Dumplings on 5th</div>
+    <div class="stamp b" style="rotate:8deg">Roof sunset</div>
+    <div class="stamp" style="rotate:-4deg">First 5k</div>
+    <div class="stamp b" style="rotate:14deg">Night swim</div>
+    <div class="stamp" style="rotate:-9deg">Thrift haul</div>
+    <div class="stamp b" style="rotate:5deg">Pottery</div>
+    <div class="stamp empty">Guitar song</div>
+    <div class="stamp empty">Museum</div>
   </div>
-  <p style="margin-top:auto;text-align:center;font-size:20px;font-weight:600">Go look around.<br>It's out there.</p>
-  <div class="shutter"></div>
-  <p class="quiet" style="text-align:center">Or choose from your photos</p>
-</div><figcaption><b>Then get out of the way</b>The quest happens in real life. This screen is just the prompt and a shutter button. You can lock your phone and come back to it.</figcaption></figure>
-
-<figure><div class="phone">
-  <h2 style="font-size:44px">Everyone's in</h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-    <div><div class="photo" style="height:120px"></div><p class="who"><b>You</b> Gerald, regional manager</p></div>
-    <div><div class="photo" style="height:120px;box-shadow:0 0 0 3px var(--orange)"></div><p class="who"><b>Maya</b> Outlet with regrets</p></div>
-    <div><div class="photo" style="height:120px"></div><p class="who"><b>Jules</b> Sad mailbox</p></div>
-    <div><div style="height:120px;border-radius:12px;border:2px dashed #b9ae99;display:grid;place-items:center;padding:10px;text-align:center" class="quiet">Dev is still looking</div></div>
-  </div>
-  <p class="quiet">You voted for Maya. Results at 9pm.</p>
-  <div class="btn alt" style="margin-top:auto">Nudge Dev</div>
-</div><figcaption><b>Post first, then see everyone else's</b>Friends' photos stay hidden until you post your own. That's the reason to finish, and nobody can copy anyone.</figcaption></figure>
-
-<figure><div class="phone">
-  <h2 style="font-size:52px">Maya wins</h2>
-  <div style="position:relative">
-    <div class="photo" style="height:200px"></div>
-    <div class="stamp" style="right:-8px;bottom:-30px">Quest<br>done</div>
-  </div>
-  <p style="font-size:18px;font-weight:600;margin-top:18px">"Outlet with regrets"</p>
-  <p class="quiet">3 of 4 votes. Your Gerald got the most laughs.</p>
-  <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
-    <div class="btn go">Deal another quest</div>
-    <div class="btn alt">Share recap</div>
-  </div>
-</div><figcaption><b>Every quest ends with a stamp</b>Each finished ticket gets stamped and goes into your collection. Getting stamps is the reward, not points.</figcaption></figure>
+  <div class="btn alt" style="margin-top:auto">Add a photo</div>
+</div><figcaption><b>A collection of things you actually did</b>Every quest you finish becomes a stamp. Empty ones show what's still on your list.</figcaption></figure>
 
 </div>
 </body>
