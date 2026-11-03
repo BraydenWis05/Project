@@ -11,68 +11,73 @@
 body{background:#e9e0cc;color:var(--ink);font:15px/1.4 Archivo,sans-serif;padding:48px 16px}
 .d{font-weight:900;font-stretch:72%;text-transform:uppercase;line-height:.9;letter-spacing:-.01em}
 .m{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.04em}
-.row{display:flex;flex-wrap:wrap;gap:32px;justify-content:center}
-figure{display:flex;flex-direction:column;gap:10px}
-.phone{width:300px;height:620px;border-radius:36px;background:var(--paper);overflow:hidden;
-  display:flex;flex-direction:column;padding:52px 20px 22px;gap:16px;box-shadow:0 1px 0 rgba(0,0,0,.1),0 20px 40px -20px rgba(0,0,0,.35)}
-.btn{border-radius:14px;padding:15px;text-align:center;font-weight:700;border:2px solid var(--ink)}
+.dim{opacity:.6}
+.row{display:flex;flex-wrap:wrap;gap:28px;justify-content:center}
+figure{display:flex;flex-direction:column;gap:8px;width:300px}
+figcaption b{display:block;font-size:14px}
+figcaption p{font-size:13px;opacity:.75}
+.phone{width:300px;height:620px;border-radius:36px;background:var(--paper);overflow:hidden;position:relative;
+  display:flex;flex-direction:column;padding:52px 20px 22px;gap:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.35)}
+.btn{border-radius:14px;padding:15px;text-align:center;font-weight:700;border:2px solid currentColor}
+.solid{border-color:transparent}
 .photo{border-radius:10px;background:repeating-linear-gradient(135deg,#d8ccb4 0 8px,#cfc2a8 8px 16px)}
-hr{border:0;border-top:1.5px solid var(--ink);opacity:.15}
+.chip{display:inline-block;padding:5px 10px;border-radius:99px;border:1.5px solid rgba(0,0,0,.2);font-size:12px;font-weight:600}
+.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 </style>
 </head>
 <body>
 <div class="row">
 
+<!-- 1 HOME: one decision, mission previewed instantly -->
 <figure><div class="phone">
-  <p class="m">7 quests done</p>
-  <h1 class="d" style="font-size:64px">Bored?<br>Good.</h1>
-  <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
-    <div class="btn" style="background:var(--orange);color:var(--paper);border-color:var(--orange);font-size:17px">Start a quest</div>
-    <div class="btn">Play with friends</div>
+  <div style="display:flex;justify-content:space-between" class="m"><span>Side Quest</span><span class="dim">7 done</span></div>
+  <p class="m dim" style="margin-top:12px">Your next quest</p>
+  <h1 class="d" style="font-size:48px">Find something that looks like a face.</h1>
+  <p class="m dim">Observation · 2 min · photo</p>
+  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto">
+    <span class="chip on">Anything</span><span class="chip">Photo</span><span class="chip">Silly</span><span class="chip">Outside</span>
   </div>
-  <hr>
-  <div>
-    <p class="m" style="opacity:.6">In progress · 2 of 4 in</p>
-    <p style="font-weight:700">The Accidental Album Cover</p>
-  </div>
-</div><figcaption class="m">Home</figcaption></figure>
+  <div class="btn solid" style="background:var(--orange);color:var(--paper);font-size:17px">Do it solo</div>
+  <div class="btn">Send to friends</div>
+  <p class="m dim" style="text-align:center">Shake or tap ↻ for another</p>
+</div><figcaption><b>1 · Home is the mission</b><p>No "start a quest" step. You open the app and there's already a quest on screen, so you're one tap from doing something.</p></figcaption></figure>
 
+<!-- 2 IN QUEST: minimal, phone goes in pocket -->
 <figure><div class="phone" style="background:var(--blue);color:var(--paper)">
-  <p class="m">Nº 024 — Creativity</p>
-  <div style="background:var(--paper);color:var(--ink);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:14px;flex:1;rotate:-1.5deg">
-    <h2 class="d" style="font-size:40px">The accidental album cover</h2>
-    <p>Make an album cover from three things you can find nearby.</p>
-    <p class="m" style="opacity:.6">5–10 min · photo</p>
-    <p style="margin-top:auto;border-top:1.5px dashed var(--ink);padding-top:12px"><b>Bonus:</b> give it a ridiculous name.</p>
+  <div style="display:flex;justify-content:space-between" class="m"><span>In progress</span><span>✕</span></div>
+  <div style="background:var(--paper);color:var(--ink);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;rotate:-1.5deg;margin-top:12px">
+    <h2 class="d" style="font-size:38px">Find something that looks like a face.</h2>
+    <p style="border-top:1.5px dashed var(--ink);padding-top:10px"><b>Bonus:</b> give it a name and a job title.</p>
   </div>
-  <div style="display:flex;gap:10px">
-    <div class="btn" style="border-color:var(--paper);flex:1">Reroll</div>
-    <div class="btn" style="background:var(--lime);color:var(--ink);border-color:var(--lime);flex:2">Go</div>
-  </div>
-</div><figcaption class="m">Mission</figcaption></figure>
+  <p class="m" style="text-align:center;margin-top:auto">Go look around. We'll wait.</p>
+  <div style="width:84px;height:84px;border-radius:50%;background:var(--lime);margin:0 auto;display:grid;place-items:center;color:var(--ink);font-weight:800;border:5px solid var(--paper)">SNAP</div>
+  <p class="m dim" style="text-align:center">or upload from camera roll</p>
+</div><figcaption><b>2 · Get out of the way</b><p>The fun happens in real life, so this screen is just the prompt and one big shutter button. You can lock your phone and come back to it later.</p></figcaption></figure>
 
+<!-- 3 SUBMIT: confirm + caption, quick -->
+<figure><div class="phone" style="background:var(--ink);color:var(--paper)">
+  <div class="m dim">Looks good?</div>
+  <div class="photo" style="flex:1;background:repeating-linear-gradient(135deg,#3a3a3a 0 8px,#333 8px 16px)"></div>
+  <div style="border-bottom:1.5px solid rgba(255,255,255,.3);padding:8px 0">Gerald. Regional manager.<span style="opacity:.4">|</span></div>
+  <div style="display:flex;gap:10px">
+    <div class="btn" style="flex:1">Retake</div>
+    <div class="btn solid" style="flex:2;background:var(--lime);color:var(--ink)">Post</div>
+  </div>
+</div><figcaption><b>3 · Retake, caption, post</b><p>Retake is always an option, so nobody feels stuck with a bad shot. The caption is optional and pre-focused, which is also where the bonus challenge goes.</p></figcaption></figure>
+
+<!-- 4 GALLERY: reveal after you post -->
 <figure><div class="phone">
-  <div style="display:flex;justify-content:space-between" class="m"><span>Album Cover</span><span>12 min left</span></div>
-  <h2 class="d" style="font-size:40px">3 takes in</h2>
+  <div style="display:flex;justify-content:space-between" class="m"><span>Faces · 4 friends</span><span class="dim">ends 9pm</span></div>
+  <h2 class="d" style="font-size:40px">Everyone's takes</h2>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    <div><div class="photo" style="height:130px"></div><p class="m" style="margin-top:6px">maya — Peel Era</p></div>
-    <div><div class="photo" style="height:130px;outline:3px solid var(--orange);outline-offset:-3px"></div><p class="m" style="margin-top:6px">jules — Sock Wave</p></div>
-    <div><div class="photo" style="height:130px"></div><p class="m" style="margin-top:6px">you — Fern Gully</p></div>
-    <div style="height:130px;border-radius:10px;border:1.5px dashed rgba(0,0,0,.3);display:grid;place-items:center" class="m">dev…</div>
+    <div><div class="photo" style="height:120px"></div><p class="m" style="margin-top:5px">you · Gerald</p></div>
+    <div><div class="photo" style="height:120px;outline:3px solid var(--orange);outline-offset:-3px"></div><p class="m" style="margin-top:5px">maya · Outlet guy</p></div>
+    <div><div class="photo" style="height:120px"></div><p class="m" style="margin-top:5px">jules · Sad mailbox</p></div>
+    <div style="height:120px;border-radius:10px;border:1.5px dashed rgba(0,0,0,.3);display:grid;place-items:center" class="m dim">dev hasn't posted</div>
   </div>
-  <div class="btn" style="margin-top:auto;background:var(--ink);color:var(--paper)">Vote for jules</div>
-</div><figcaption class="m">Gallery</figcaption></figure>
-
-<figure><div class="phone" style="background:var(--orange);color:var(--paper)">
-  <p class="m">Quest complete</p>
-  <h2 class="d" style="font-size:52px">Jules<br>wins.</h2>
-  <div class="photo" style="flex:1;background:repeating-linear-gradient(135deg,#f7d9c8 0 8px,#f2cbb6 8px 16px)"></div>
-  <p class="m">"Sock Wave" · 3 votes · 4 players</p>
-  <div style="display:flex;gap:10px">
-    <div class="btn" style="border-color:var(--paper);flex:1">Share</div>
-    <div class="btn" style="background:var(--paper);color:var(--ink);border-color:var(--paper);flex:1">One more</div>
-  </div>
-</div><figcaption class="m">Results</figcaption></figure>
+  <div style="display:flex;gap:6px;justify-content:center;font-size:20px">😂 🏆 🤯 😤</div>
+  <div class="btn solid" style="margin-top:auto;background:var(--ink);color:var(--paper)">Next quest →</div>
+</div><figcaption><b>4 · Post first, then see</b><p>Friends' photos stay locked until you post your own. That's the hook (like BeReal) and it stops people copying each other. The one-tap "Next quest" button keeps the loop going.</p></figcaption></figure>
 
 </div>
 </body>
