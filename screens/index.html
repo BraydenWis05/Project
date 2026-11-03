@@ -4,80 +4,98 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Side Quest Screens</title>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Space+Mono&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Gabarito:wght@400;600;700&family=Space+Mono&display=swap" rel="stylesheet" />
 <style>
 :root{--orange:#F45B35;--paper:#F4EBD8;--lime:#C8E65A;--blue:#4444DB;--ink:#252525}
 *{box-sizing:border-box;margin:0}
-body{background:#e9e0cc;color:var(--ink);font:15px/1.4 Archivo,sans-serif;padding:48px 16px}
-.d{font-weight:900;font-stretch:72%;text-transform:uppercase;line-height:.9;letter-spacing:-.01em}
-.m{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:.04em}
-.dim{opacity:.6}
-.row{display:flex;flex-wrap:wrap;gap:28px;justify-content:center}
-figure{display:flex;flex-direction:column;gap:8px;width:300px}
-figcaption b{display:block;font-size:14px}
-figcaption p{font-size:13px;opacity:.75}
-.phone{width:300px;height:620px;border-radius:36px;background:var(--paper);overflow:hidden;position:relative;
-  display:flex;flex-direction:column;padding:52px 20px 22px;gap:14px;box-shadow:0 20px 40px -20px rgba(0,0,0,.35)}
-.btn{border-radius:14px;padding:15px;text-align:center;font-weight:700;border:2px solid currentColor}
-.solid{border-color:transparent}
-.photo{border-radius:10px;background:repeating-linear-gradient(135deg,#d8ccb4 0 8px,#cfc2a8 8px 16px)}
-.chip{display:inline-block;padding:5px 10px;border-radius:99px;border:1.5px solid rgba(0,0,0,.2);font-size:12px;font-weight:600}
-.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+body{background:var(--blue);color:var(--ink);font:16px/1.4 Gabarito,sans-serif;padding:56px 16px}
+h1,h2,.d{font-family:"Big Shoulders Display",sans-serif;font-weight:900;line-height:.88;letter-spacing:-.005em}
+.row{display:flex;flex-wrap:wrap;gap:40px 28px;justify-content:center;align-items:flex-start}
+figure{width:300px;display:flex;flex-direction:column;gap:14px}
+figcaption{color:var(--paper);font-size:14px;line-height:1.45}
+figcaption b{display:block;font-size:16px;margin-bottom:2px}
+.phone{height:620px;border-radius:40px;background:var(--paper);overflow:hidden;position:relative;
+  display:flex;flex-direction:column;padding:56px 20px 24px;gap:16px;border:3px solid var(--ink)}
+.quiet{color:#6d665a;font-size:14px}
+.btn{border-radius:999px;padding:16px;text-align:center;font-weight:700;font-size:17px}
+.go{background:var(--orange);color:#fff}
+.alt{box-shadow:inset 0 0 0 2px var(--ink)}
+
+/* the ticket: the one loud thing */
+.ticket{display:flex;border-radius:14px;overflow:hidden;filter:drop-shadow(0 3px 0 var(--ink))}
+.ticket .body{flex:1;background:var(--lime);padding:18px 16px 16px;display:flex;flex-direction:column;gap:10px}
+.ticket .stub{width:46px;background:var(--blue);color:var(--paper);display:grid;place-items:center;position:relative;
+  border-left:3px dotted var(--paper)}
+.ticket .stub span{writing-mode:vertical-rl;rotate:180deg;font:12px "Space Mono",monospace}
+.ticket h2{font-size:44px}
+.stamp{position:absolute;width:118px;height:118px;border-radius:50%;border:4px solid var(--orange);color:var(--orange);
+  display:grid;place-items:center;text-align:center;font:900 26px/0.9 "Big Shoulders Display";rotate:-14deg;
+  background:rgba(244,235,216,.0);mix-blend-mode:multiply}
+.stamp::after{content:"";position:absolute;inset:5px;border-radius:50%;border:2px solid var(--orange)}
+.photo{border-radius:12px;background:#ddd2bd;position:relative;overflow:hidden}
+.photo::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 35% 40%,#c9bda5 0 14%,transparent 15%),radial-gradient(circle at 65% 40%,#c9bda5 0 14%,transparent 15%),radial-gradient(ellipse at 50% 72%,#c9bda5 0 22%,transparent 23%)}
+.who{font-size:13px;margin-top:6px}
+.who b{font-weight:700}
+.shutter{width:80px;height:80px;border-radius:50%;background:var(--orange);margin:0 auto;box-shadow:0 0 0 5px var(--paper),0 0 0 8px var(--ink)}
 </style>
 </head>
 <body>
 <div class="row">
 
-<!-- 1 HOME: one decision, mission previewed instantly -->
 <figure><div class="phone">
-  <div style="display:flex;justify-content:space-between" class="m"><span>Side Quest</span><span class="dim">7 done</span></div>
-  <p class="m dim" style="margin-top:12px">Your next quest</p>
-  <h1 class="d" style="font-size:48px">Find something that looks like a face.</h1>
-  <p class="m dim">Observation · 2 min · photo</p>
-  <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:auto">
-    <span class="chip on">Anything</span><span class="chip">Photo</span><span class="chip">Silly</span><span class="chip">Outside</span>
+  <p class="quiet">Hey Sam. Here's one for you.</p>
+  <div class="ticket">
+    <div class="body">
+      <h2>Find something that looks like a face</h2>
+      <p>Takes about 2 minutes. Snap a photo.</p>
+    </div>
+    <div class="stub"><span>No. 024</span></div>
   </div>
-  <div class="btn solid" style="background:var(--orange);color:var(--paper);font-size:17px">Do it solo</div>
-  <div class="btn">Send to friends</div>
-  <p class="m dim" style="text-align:center">Shake or tap ↻ for another</p>
-</div><figcaption><b>1 · Home is the mission</b><p>No "start a quest" step. You open the app and there's already a quest on screen, so you're one tap from doing something.</p></figcaption></figure>
-
-<!-- 2 IN QUEST: minimal, phone goes in pocket -->
-<figure><div class="phone" style="background:var(--blue);color:var(--paper)">
-  <div style="display:flex;justify-content:space-between" class="m"><span>In progress</span><span>✕</span></div>
-  <div style="background:var(--paper);color:var(--ink);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;rotate:-1.5deg;margin-top:12px">
-    <h2 class="d" style="font-size:38px">Find something that looks like a face.</h2>
-    <p style="border-top:1.5px dashed var(--ink);padding-top:10px"><b>Bonus:</b> give it a name and a job title.</p>
+  <p class="quiet" style="text-align:center">Not feeling it? Pull down for another.</p>
+  <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+    <div class="btn go">Start solo</div>
+    <div class="btn alt">Play with friends</div>
   </div>
-  <p class="m" style="text-align:center;margin-top:auto">Go look around. We'll wait.</p>
-  <div style="width:84px;height:84px;border-radius:50%;background:var(--lime);margin:0 auto;display:grid;place-items:center;color:var(--ink);font-weight:800;border:5px solid var(--paper)">SNAP</div>
-  <p class="m dim" style="text-align:center">or upload from camera roll</p>
-</div><figcaption><b>2 · Get out of the way</b><p>The fun happens in real life, so this screen is just the prompt and one big shutter button. You can lock your phone and come back to it later.</p></figcaption></figure>
+</div><figcaption><b>Open the app, get a quest</b>There's no menu to pick from. The ticket is already dealt, so you're one tap away from doing something.</figcaption></figure>
 
-<!-- 3 SUBMIT: confirm + caption, quick -->
-<figure><div class="phone" style="background:var(--ink);color:var(--paper)">
-  <div class="m dim">Looks good?</div>
-  <div class="photo" style="flex:1;background:repeating-linear-gradient(135deg,#3a3a3a 0 8px,#333 8px 16px)"></div>
-  <div style="border-bottom:1.5px solid rgba(255,255,255,.3);padding:8px 0">Gerald. Regional manager.<span style="opacity:.4">|</span></div>
-  <div style="display:flex;gap:10px">
-    <div class="btn" style="flex:1">Retake</div>
-    <div class="btn solid" style="flex:2;background:var(--lime);color:var(--ink)">Post</div>
-  </div>
-</div><figcaption><b>3 · Retake, caption, post</b><p>Retake is always an option, so nobody feels stuck with a bad shot. The caption is optional and pre-focused, which is also where the bonus challenge goes.</p></figcaption></figure>
-
-<!-- 4 GALLERY: reveal after you post -->
 <figure><div class="phone">
-  <div style="display:flex;justify-content:space-between" class="m"><span>Faces · 4 friends</span><span class="dim">ends 9pm</span></div>
-  <h2 class="d" style="font-size:40px">Everyone's takes</h2>
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
-    <div><div class="photo" style="height:120px"></div><p class="m" style="margin-top:5px">you · Gerald</p></div>
-    <div><div class="photo" style="height:120px;outline:3px solid var(--orange);outline-offset:-3px"></div><p class="m" style="margin-top:5px">maya · Outlet guy</p></div>
-    <div><div class="photo" style="height:120px"></div><p class="m" style="margin-top:5px">jules · Sad mailbox</p></div>
-    <div style="height:120px;border-radius:10px;border:1.5px dashed rgba(0,0,0,.3);display:grid;place-items:center" class="m dim">dev hasn't posted</div>
+  <div class="ticket" style="rotate:-2deg">
+    <div class="body">
+      <h2 style="font-size:36px">Find something that looks like a face</h2>
+      <p style="font-size:14px"><b>Bonus:</b> give it a name and a job.</p>
+    </div>
+    <div class="stub"><span>No. 024</span></div>
   </div>
-  <div style="display:flex;gap:6px;justify-content:center;font-size:20px">😂 🏆 🤯 😤</div>
-  <div class="btn solid" style="margin-top:auto;background:var(--ink);color:var(--paper)">Next quest →</div>
-</div><figcaption><b>4 · Post first, then see</b><p>Friends' photos stay locked until you post your own. That's the hook (like BeReal) and it stops people copying each other. The one-tap "Next quest" button keeps the loop going.</p></figcaption></figure>
+  <p style="margin-top:auto;text-align:center;font-size:20px;font-weight:600">Go look around.<br>It's out there.</p>
+  <div class="shutter"></div>
+  <p class="quiet" style="text-align:center">Or choose from your photos</p>
+</div><figcaption><b>Then get out of the way</b>The quest happens in real life. This screen is just the prompt and a shutter button. You can lock your phone and come back to it.</figcaption></figure>
+
+<figure><div class="phone">
+  <h2 style="font-size:44px">Everyone's in</h2>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div><div class="photo" style="height:120px"></div><p class="who"><b>You</b> Gerald, regional manager</p></div>
+    <div><div class="photo" style="height:120px;box-shadow:0 0 0 3px var(--orange)"></div><p class="who"><b>Maya</b> Outlet with regrets</p></div>
+    <div><div class="photo" style="height:120px"></div><p class="who"><b>Jules</b> Sad mailbox</p></div>
+    <div><div style="height:120px;border-radius:12px;border:2px dashed #b9ae99;display:grid;place-items:center;padding:10px;text-align:center" class="quiet">Dev is still looking</div></div>
+  </div>
+  <p class="quiet">You voted for Maya. Results at 9pm.</p>
+  <div class="btn alt" style="margin-top:auto">Nudge Dev</div>
+</div><figcaption><b>Post first, then see everyone else's</b>Friends' photos stay hidden until you post your own. That's the reason to finish, and nobody can copy anyone.</figcaption></figure>
+
+<figure><div class="phone">
+  <h2 style="font-size:52px">Maya wins</h2>
+  <div style="position:relative">
+    <div class="photo" style="height:200px"></div>
+    <div class="stamp" style="right:-8px;bottom:-30px">Quest<br>done</div>
+  </div>
+  <p style="font-size:18px;font-weight:600;margin-top:18px">"Outlet with regrets"</p>
+  <p class="quiet">3 of 4 votes. Your Gerald got the most laughs.</p>
+  <div style="margin-top:auto;display:flex;flex-direction:column;gap:10px">
+    <div class="btn go">Deal another quest</div>
+    <div class="btn alt">Share recap</div>
+  </div>
+</div><figcaption><b>Every quest ends with a stamp</b>Each finished ticket gets stamped and goes into your collection. Getting stamps is the reward, not points.</figcaption></figure>
 
 </div>
 </body>
