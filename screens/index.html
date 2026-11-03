@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Side Quest Screens</title>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+:root{--orange:#F45B35;--paper:#F4EBD8;--lime:#C8E65A;--blue:#4444DB;--ink:#252525;--pink:#FF4FA3}
+*{box-sizing:border-box;margin:0}
+body{background:var(--blue);color:var(--ink);font:15px/1.4 "DM Sans",sans-serif;padding:40px 16px;
+  background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:6px 6px}
+.d{font-family:Anton,sans-serif;text-transform:uppercase;letter-spacing:.01em;line-height:.92}
+.m{font-family:"Space Mono",monospace;font-size:11px;text-transform:uppercase;letter-spacing:.08em}
+header{text-align:center;color:var(--paper);margin-bottom:36px}
+header h1{font-size:clamp(48px,10vw,96px);color:var(--lime);text-shadow:5px 5px 0 var(--orange)}
+.row{display:flex;flex-wrap:wrap;gap:36px;justify-content:center}
+figure{display:flex;flex-direction:column;align-items:center;gap:12px}
+figcaption{color:var(--paper)}
+.phone{width:320px;height:660px;max-width:100%;border:3px solid var(--ink);border-radius:42px;background:var(--paper);
+  overflow:hidden;position:relative;box-shadow:8px 8px 0 var(--ink);display:flex;flex-direction:column;padding:44px 18px 18px;gap:14px}
+.phone::before{content:"";position:absolute;top:12px;left:50%;translate:-50%;width:90px;height:22px;border-radius:20px;background:var(--ink)}
+.tag{display:inline-block;background:var(--ink);color:var(--paper);padding:4px 9px;border-radius:99px}
+.btn{border:3px solid var(--ink);border-radius:18px;padding:14px;text-align:center;box-shadow:4px 4px 0 var(--ink);font-weight:700}
+.sticker{position:absolute;pointer-events:none}
+.star{clip-path:polygon(50% 0,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%)}
+.burst{clip-path:polygon(50% 0,58% 20%,79% 9%,77% 31%,98% 33%,84% 50%,98% 67%,77% 69%,79% 91%,58% 80%,50% 100%,42% 80%,21% 91%,23% 69%,2% 67%,16% 50%,2% 33%,23% 31%,21% 9%,42% 20%)}
+.card{border:3px solid var(--ink);border-radius:22px;padding:16px;position:relative}
+.nav{margin-top:auto;display:flex;justify-content:space-around;border-top:3px solid var(--ink);padding-top:10px}
+.nav span.on{background:var(--lime);border:2px solid var(--ink);border-radius:99px;padding:2px 8px}
+.grain{background-image:radial-gradient(rgba(0,0,0,.12) 1px,transparent 1px);background-size:4px 4px}
+</style>
+</head>
+<body>
+<header>
+  <p class="m">Direction 01 · The Everyday Adventure Club</p>
+  <h1 class="d">Side Quest®</h1>
+</header>
+
+<div class="row">
+
+<!-- 1 HOME -->
+<figure><div class="phone">
+  <div class="sticker star" style="width:90px;height:90px;background:var(--pink);right:-14px;top:70px;rotate:14deg"></div>
+  <p class="m">Tue · 3:42 PM · Quests done: 07</p>
+  <h2 class="d" style="font-size:54px">Bored?<br><span style="color:var(--orange)">Good.</span></h2>
+  <p>You don't need a plan. You need a side quest.</p>
+  <div class="card grain" style="background:var(--orange);color:var(--paper);rotate:-2deg;box-shadow:5px 5px 0 var(--ink)">
+    <p class="m">Solo · ~5 min</p>
+    <p class="d" style="font-size:38px;margin-top:6px">Start a<br>quest →</p>
+  </div>
+  <div class="btn" style="background:var(--lime);rotate:1deg">👯 Play with friends</div>
+  <div class="card" style="background:#fff;padding:12px">
+    <p class="m">Continue · 2/4 submitted</p>
+    <p style="font-weight:700">The Accidental Album Cover</p>
+  </div>
+  <div class="nav m"><span class="on">Home</span><span>Explore</span><span>Activity</span><span>Me</span></div>
+</div><figcaption class="m">01 · Home</figcaption></figure>
+
+<!-- 2 MISSION -->
+<figure><div class="phone" style="background:var(--blue)">
+  <div class="sticker burst" style="width:110px;height:110px;background:var(--lime);right:-20px;top:40px;display:grid;place-items:center"><span class="d" style="font-size:22px;rotate:12deg">Easy!</span></div>
+  <p class="m" style="color:var(--paper)">Mission Nº 024 · Reroll 2/3</p>
+  <p class="d" style="color:var(--lime);font-size:26px">Okay, here's<br>your mission.</p>
+  <div class="card" style="background:var(--paper);rotate:-1.5deg;box-shadow:6px 6px 0 var(--ink);flex:1;display:flex;flex-direction:column;gap:10px">
+    <span class="tag m" style="align-self:flex-start;background:var(--orange)">🎨 Creativity</span>
+    <h3 class="d" style="font-size:42px">The Accidental Album Cover</h3>
+    <p>Make an album cover using three objects you can find nearby.</p>
+    <div style="display:flex;gap:6px" class="m"><span class="tag">⏱ 5–10 min</span><span class="tag">📸 Photo</span></div>
+    <div style="margin-top:auto;background:var(--lime);border:2px dashed var(--ink);border-radius:14px;padding:10px">
+      <span class="m">★ Bonus</span><br>Give your album a ridiculous name.</div>
+  </div>
+  <div style="display:flex;gap:10px">
+    <div class="btn" style="background:var(--paper);flex:none">🎲</div>
+    <div class="btn" style="background:var(--orange);color:var(--paper);flex:1">Let's go</div>
+  </div>
+</div><figcaption class="m">02 · Mission reveal</figcaption></figure>
+
+<!-- 3 GALLERY -->
+<figure><div class="phone">
+  <p class="m">Friendly competition · ⏱ 12:08 left</p>
+  <h2 class="d" style="font-size:32px;line-height:1.05">Everyone's<br><span style="background:var(--lime);padding:0 6px">takes</span></h2>
+  <p class="m" style="color:var(--orange)">Your friends are being suspiciously competitive.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+    <div class="card" style="padding:6px;background:#fff;rotate:-3deg"><div class="grain" style="height:84px;border-radius:12px;background:var(--pink);display:grid;place-items:center;font-size:40px">🍌</div><p class="m" style="margin-top:4px">@maya · "Peel Era"</p></div>
+    <div class="card" style="padding:6px;background:#fff;rotate:2deg"><div class="grain" style="height:84px;border-radius:12px;background:var(--orange);display:grid;place-items:center;font-size:40px">🧦</div><p class="m" style="margin-top:4px">@jules · "Sock Wave"</p></div>
+    <div class="card" style="padding:6px;background:#fff;rotate:1deg"><div class="grain" style="height:84px;border-radius:12px;background:var(--blue);display:grid;place-items:center;font-size:40px">🪴</div><p class="m" style="margin-top:4px">@you · "Fern Gully"</p></div>
+    <div class="card" style="padding:6px;background:#fff;rotate:-2deg;border-style:dashed;display:grid;place-items:center;text-align:center"><p class="m">@dev<br>still questing…</p></div>
+  </div>
+  <div style="display:flex;flex-wrap:wrap;gap:6px">
+    <span class="tag m" style="background:var(--lime);color:var(--ink);border:2px solid var(--ink)">🏆 Best one</span>
+    <span class="tag m">🌀 Unhinged</span><span class="tag m">😤 Hate how good</span><span class="tag m">😂 LOL</span>
+  </div>
+  <div class="btn" style="background:var(--orange);color:var(--paper);margin-top:auto">Vote for @maya</div>
+</div><figcaption class="m">03 · Group gallery + vote</figcaption></figure>
+
+<!-- 4 RESULTS -->
+<figure><div class="phone" style="background:var(--orange)">
+  <div class="sticker star" style="width:70px;height:70px;background:var(--lime);left:-10px;top:90px;rotate:-12deg"></div>
+  <div class="sticker star" style="width:46px;height:46px;background:var(--paper);right:14px;top:56px;rotate:20deg"></div>
+  <p class="m" style="color:var(--paper);text-align:center">Quest complete · Nov 03</p>
+  <h2 class="d" style="font-size:40px;color:var(--paper);text-align:center;text-shadow:4px 4px 0 var(--ink)">Beautifully<br>questionable<br>work.</h2>
+  <div class="card" style="background:var(--paper);rotate:2deg;box-shadow:6px 6px 0 var(--ink);text-align:center">
+    <div class="burst" style="width:70px;height:70px;background:var(--lime);margin:-36px auto 4px;display:grid;place-items:center;font-size:28px">🍌</div>
+    <p class="m">Winner · 3 votes</p>
+    <p class="d" style="font-size:30px">@maya — "Peel Era"</p>
+    <p class="m" style="margin-top:8px">4 players · 3 takes · 11 reactions</p>
+  </div>
+  <div style="border:3px dashed var(--paper);border-radius:16px;padding:10px;color:var(--paper);text-align:center" class="m">★ Badge unlocked: Chaos Coordinator ★</div>
+  <div style="display:flex;gap:10px;margin-top:auto">
+    <div class="btn" style="background:var(--paper);flex:1">Share recap</div>
+    <div class="btn" style="background:var(--lime);flex:1">One more?</div>
+  </div>
+</div><figcaption class="m">04 · Results recap</figcaption></figure>
+
+</div>
+</body>
+</html>
